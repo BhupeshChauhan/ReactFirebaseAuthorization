@@ -14,11 +14,11 @@ function App() {
         console.log(user, "user")
         if (!user) {
             return <UnAuthRoutes />;
-        } else if (user?.Role?.user === true && user?.Role.editor === false && user?.Role.admin === false) {
+        } else if (user?.Role?.user === true && user.Role.editor === false && user.Role.admin === false) {
             return <AuthRoutes />;
-        } else if (user?.Role?.user === true && user?.Role.editor === true && user?.Role.admin === false) {
+        } else if (user?.Role?.user === true && user.Role.editor === true && user.Role.admin === false) {
             return <EditorRoutes />;
-        } else if (user?.Role?.user === true && user?.Role.editor === true && user?.Role.admin === true) {
+        } else if (user?.Role?.user === true && user.Role.editor === true && user.Role.admin === true) {
             return <AdminRoutes />;
         } else {
             return <Loader />;
